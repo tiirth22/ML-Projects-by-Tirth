@@ -4,6 +4,15 @@ The code demonstrates a commitment to clarity and efficiency, providing intuitiv
 With clear documentation and concise implementation, this code fosters collaboration and empowers users to navigate and contribute effectively. 
 It reflects a dedication to enhancing the developer experience and fostering a welcoming environment for innovation and growth."""
 
+""" This Python code aims to distinguish between benign tumours, which are generally harmless or
+mild, and malignant tumours, which are cancerous and potentially harmful. By analysing features
+extracted from medical data, such as images or diagnostic tests, the code classifies tumours into 
+these two categories.  
+Its purpose is to aid in medical diagnosis by providing insights into the nature of tumours,  
+facilitating appropriate treatment decisions and patient care."""
+
+
+
 # Import necessary libraries DAY 1 
 
 from sklearn.datasets import load_breast_cancer
