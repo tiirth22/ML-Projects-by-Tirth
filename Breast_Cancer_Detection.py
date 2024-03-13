@@ -12,8 +12,8 @@ Its purpose is to aid in medical diagnosis by providing insights into the nature
 facilitating appropriate treatment decisions and patient care."""
 
 
-
-# Import necessary libraries DAY 1 
+# DAY 1 
+# Import necessary libraries 
 
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
@@ -21,6 +21,32 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import accuracy_score
 
+# DAY 2
 
+# Load the breast cancer dataset
+data = load_breast_cancer()
+X = data.data  # Features
+y = data.target  # Target variable
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=0.42)
+
+# Standardize the features
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)  # Fit and transform the training data
+X_test = scaler.transform(X_test)  # Transform the testing data using the same scaler
+
+# Initialize and train the logistic regression model
+logistic_regression_model = LogisticRegression()
+logistic_regression_model.fit(X_train, y_train)  # Fit the model to the training data
+
+# Make predictions on the testing set
+y_pred = logistic_regression_model.predict(X_test)
+
+# Calculate accuracy
+accuracy = accuracy_score(y_test, y_pred)  # Calculate the accuracy of the predictions
+
+# Print the accuracy
+print("Accuracy of classifying malignant breast cancer cases:", accuracy)
 
 
